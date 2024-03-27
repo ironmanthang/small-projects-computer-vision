@@ -1,3 +1,4 @@
+# when pip install --upgrade tensorflow the code run really slow, but when pip install --upgrade --force-reinstall tensorflow, it faster
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
