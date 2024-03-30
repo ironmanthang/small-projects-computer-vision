@@ -3,7 +3,7 @@ import cv2
 # Load the cascade
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-url = "http://10.1654546.32.131:8080/" # Your url might be different, check the app "ip webcam"
+url = "http://10.177013.32.131:8080/" # Your url might be different, check the app "ip webcam"
 
 vs = cv2.VideoCapture(url+"/video")
 
