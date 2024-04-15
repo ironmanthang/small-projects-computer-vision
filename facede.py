@@ -1,4 +1,4 @@
-#python code for face detection and then save the detected images
+#python code for face detection 
 import cv2
 import numpy as np
 import imutils
@@ -9,9 +9,6 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 
 # Use 0 for laptop's built-in camera
 cap = cv2.VideoCapture(0)
-
-count = 0  # counter for image names
-last_saved_time = time.time()  # time when the last image was saved
 
 while True:
     ret, img = cap.read()
@@ -27,13 +24,6 @@ while True:
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
         face = img  # slice the face from the image
-
-        # Check if at least _s seconds have passed since the last image was saved
-        _s=0
-        if time.time() - last_saved_time >= _s:
-            cv2.imwrite('face' + str(count) + '.jpg', face)  # save the image
-            count += 1
-            last_saved_time = time.time()  # update the time when the image was saved
 
     # Display the output
     cv2.imshow("Camera", img)
